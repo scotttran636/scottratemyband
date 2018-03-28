@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Rate My Band</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="stylesheets/signin.css">
+  <link rel="stylesheet" href="stylesheets/twitter.css">
+  <link rel="stylesheet" href="stylesheets/modal.css"/>
+
+</head>
+
+<body class="container">
+  <header>
+    <h3>Rate My Band</h3>
+    <div data-user-info="display-username"></div>
+  </header>
+
+  <div id="comment-modal" class="modal">
+    <label>
+      <div data-modal-info="modal">
+        <div class="panel panel-title">
+          <div class="panel-body">
+            <form data-coffee-order="form">
+              <div class="form-group">
+
+                <div class="vote-selector form-group">
+                  <input id="downvote" type="radio" name="vote" value="downvote" />
+                  <label class="drinkcard-cc downvote" for="downvote"></label>
+                  <input id="upvote" type="radio" name="vote" value="upvote" />
+                  <label class="drinkcard-cc upvote" for="upvote"></label>
+                </div>
+
+                <label for="userComment"> </label>
+                <input class="form-control" name="comment" placeholder="Add a comment" id="userComment" autofocus/>
+
+              </div>
+
+              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="reset" class="btn btn-default">Reset</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </label>
+  </div>
+
+  <div id="login-modal" class="modal">
+    <label>
+      <div data-modal-info="modal">
+        <form class="form-signin" data-signin="form">
+          <h2 class="form-signin-heading">Please sign in</h2>
+
+          <label for="username" class="sr-only">Username</label>
+          <input type="text" name="username" id="username" class="form-control" placeholder="Username" value="" required autofocus>
+
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" name="password" id="password" class="form-control" placeholder="Password" value="">
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+        </form>
+      </div>
+    </label>
+  </div>
+
+  <div id="signup-modal" class="modal">
+    <label>
+      <div data-modal-info="modal">
+        <form class="form-signin" data-signup="form">
+          <h2 class="form-signin-heading">Welcome</h2>
+
+          <label for="username" class="sr-only">Username</label>
+          <input type="text" name="username" id="signupusername" class="form-control" placeholder="Username" value="" required autofocus>
+
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" name="password" id="signuppassword" class="form-control" placeholder="Password" value="">
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+
+        </form>
+      </div>
+    </label>
+  </div>
+
+  <section>
+    <div class="panel panel-footer">
+      <button type="button" class="btn btn-default" id="SignupButton">Signup</button>
+      <button type="button" class="btn btn-default" id="LoginButton">Login</button>
+      <button type="button" class="btn btn-default" id="LogoutButton">Logout</button>
+    </div>
+    <div class="panel panel-footer" data-user-info="display-username"></div>
+  </section>
+
+  <section>
+    <div class="panel panel-footer">
+    <a href="index2.html">Home</a>
+  </div>
+</section>
+
+  <section>
+    <div class="panel panel-footer">
+      <div class ="data-performance" alt="bandname">
+        <label>Example band</label>
+      </div>
+      <div class="data-performance" alt="date">
+        <p>Performance on January 2, 1965</p>
+      </div>
+      <div id="voteCount" data-vote-count="display">
+      <!--  <iframe width="854" height="480" src="https://www.youtube.com/embed/dhCeseXZEKA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      -->
+      </div>
+    </div>
+    <section>
+      <div class="panel panel-footer">
+        <button type="button" class="btn btn-default" id="CommentButton">Comment</button>
+      </div>
+    </section>
+    <div class="panel panel-footer">
+      <div class="panel-body">
+        <h4>Comments:</h4>
+        <div data-user-comment="comment"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js" charset="utf-8"></script>
+  <!--for modal-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+  <!--my scripts-->
+  <script src="scripts/changedom.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/truck.js" charset="utf-8"></script>
+  <script src="scripts/main.js" charset="utf-8"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+{
+	"type": "Collection",
+	"properties": {
+		"bandGenre": {
+			"name": "bandGenre",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "bandGenre",
+			"order": 0
+		},
+		"bandName": {
+			"name": "bandName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "bandName",
+			"order": 1
+		},
+		"bandVideo": {
+			"name": "bandVideo",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "bandVideo",
+			"order": 2
+		},
+		"performanceDay": {
+			"name": "performanceDay",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "performanceDay",
+			"order": 3
+		}
+	}
+}
