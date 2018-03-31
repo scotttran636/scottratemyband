@@ -54,6 +54,7 @@
     this.$element = $div;
   }
 
+<<<<<<< HEAD
   Comments.prototype.addUserInfoText = function(username) {
     var $paragraph = $("<p></p>", {
       "data-user-logged-in": "username",
@@ -64,6 +65,8 @@
     this.$element.append($paragraph);
   };
 
+=======
+>>>>>>> 27380cd83fab0c729aa567d20fda75630af52354
   App.Comments = Comments;
   window.App = App;
 })(window);

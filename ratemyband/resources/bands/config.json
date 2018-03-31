@@ -1,12 +1,12 @@
 {
 	"type": "Collection",
 	"properties": {
-		"genre": {
-			"name": "genre",
+		"bandGenre": {
+			"name": "bandGenre",
 			"type": "string",
 			"typeLabel": "string",
 			"required": true,
-			"id": "genre",
+			"id": "bandGenre",
 			"order": 0
 		},
 		"bandName": {
@@ -32,14 +32,6 @@
 			"required": false,
 			"id": "performanceDay",
 			"order": 3
-		},
-		"bandImage": {
-			"name": "bandImage",
-			"type": "string",
-			"typeLabel": "string",
-			"required": false,
-			"id": "bandImage",
-			"order": 4
 		}
 	}
 }

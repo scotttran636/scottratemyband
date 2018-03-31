@@ -29,6 +29,29 @@
     this.$element = $div;
   }
 
+<<<<<<< HEAD
+=======
+  ChangeDom.prototype.addUserInfoText = function(username) {
+    var $paragraph = $("<p></p>", {
+      "data-user-logged-in": "username",
+      "id": "currentUser"
+    });
+    var description = "Logged in as <font color=\"gray\"> <i> \"" + username + "\"</i></font><br />";
+    $paragraph.append(description);
+    this.$element.append($paragraph);
+  };
+
+  ChangeDom.prototype.updateVoteCount = function (upvotes, downvotes) {
+    var $paragraph = $("<p></p>", {
+      "data-vote-count": "current"
+    });
+    var description = "This performance has <font color=\"gray\"> <i>" + upvotes + "</i></font> upvotes and "
+                      + "<font color=\"gray\"> <i> " + downvotes + "</i></font> downvotes.<br />";
+    $paragraph.append(description);
+    this.$element.append($paragraph);
+  };
+
+>>>>>>> 27380cd83fab0c729aa567d20fda75630af52354
   App.ChangeDom = ChangeDom;
   window.App = App;
 })(window);

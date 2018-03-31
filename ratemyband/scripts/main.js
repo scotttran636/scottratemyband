@@ -1,6 +1,7 @@
 (function(window) {
   "use strict";
   console.log("USING main.js");
+<<<<<<< HEAD
   var FORM_SELECTOR_COMMENTS = "[data-band-review=\"form\"]";
   var CHECKLIST_SELECTOR = "[data-band-review=\"user-comments\"]";
   var FORM_SELECTOR_LOGIN_MODAL = "[data-signin=\"form\"]";
@@ -35,11 +36,42 @@
   //var Genrelist = new Genres(SELECTOR_GENRE);
 
   var commentsSummary = new Comments(CHECKLIST_SELECTOR);
+=======
+
+  var FORM_SELECTOR_COMMENTS = "[data-coffee-order=\"form\"]";
+  var FORM_SELECTOR_LOGIN_MODAL = "[data-signin=\"form\"]";
+  var FORM_SELECTOR_VOTE_COUNT = "[data-vote-count=\"display\"]";
+  var FORM_SELECTOR_SIGNUP_MODAL = "[data-signup=\"form\"]";
+
+  var COMMENT_SECTION_SELECTOR = "[data-user-comment=\"comment\"]";
+  var USERINFO_SELECTOR = "[data-user-info=\"display-username\"]";
+
+  var App = window.App;
+  var $ = window.jQuery;
+  var Truck = App.Truck;
+  var RemoteDataStore = App.RemoteDataStore;
+  var FormHandler = App.FormHandler;
+  var ChangeDom = App.ChangeDom;
+
+  var remoteDSComments = new RemoteDataStore("http://localhost:2403/user-comments");
+  var remoteDSLogin = new RemoteDataStore("http://localhost:2403/users/login");
+
+  var myTruckComments = new Truck("ncc-1701", remoteDSComments);
+  var myTruckLogin = new Truck("users", remoteDSLogin);
+
+  window.myTruckComments = myTruckComments;
+  window.myTruckLogin = myTruckLogin;
+
+  var changeDomComments = new ChangeDom(COMMENT_SECTION_SELECTOR);
+  var changeDomUser = new ChangeDom(USERINFO_SELECTOR);
+
+>>>>>>> 27380cd83fab0c729aa567d20fda75630af52354
   var formHandlerComments = new FormHandler(FORM_SELECTOR_COMMENTS);
 
   var formHandlerLoginModal = new FormHandler(FORM_SELECTOR_LOGIN_MODAL);
   var formHandlerSignupModal = new FormHandler(FORM_SELECTOR_SIGNUP_MODAL);
 
+<<<<<<< HEAD
 
   var params = window.location.search.split("?")[1];
   var bandName = decodeURIComponent(params.split("=")[1]);
@@ -84,6 +116,33 @@
       $("#upvoteCount").text(numUpVotes);
       $("#downvoteCount").text(numDownVotes);
     });
+=======
+  //display comments on page reloads
+  remoteDSComments.getAll(function(response){
+    var ChangeDom = App.ChangeDom;
+    var changeDomComments = new ChangeDom(COMMENT_SECTION_SELECTOR);
+    var i = response.length;
+
+    var numUpvotes = 0;
+    var numDownvotes = 0;
+
+    //count the number of votes in database
+    for(var j = 0; j < i; j++) {
+      changeDomComments.addComment(response[j]);
+      if(response[j].vote == "upvote") numUpvotes++;
+      if(response[j].vote == "downvote") numDownvotes++;
+    }
+    var changeDomVotes = new ChangeDom(FORM_SELECTOR_VOTE_COUNT);
+    changeDomVotes.updateVoteCount(numUpvotes, numDownvotes);
+  });
+
+  var currentUser;
+  formHandlerComments.addSubmitHandler(function(data) {
+    data.username = currentUser;
+
+    myTruckComments.createOrder(data);
+    changeDomComments.addComment(data);
+>>>>>>> 27380cd83fab0c729aa567d20fda75630af52354
   });
 
   //Login Button Click Handler
@@ -119,6 +178,10 @@
     });
   });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 27380cd83fab0c729aa567d20fda75630af52354
   //Signup Form Handler
   formHandlerSignupModal.addSubmitHandler(function(data) {
     console.log(data);
