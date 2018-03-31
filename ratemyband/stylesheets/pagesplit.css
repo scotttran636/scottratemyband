@@ -27,7 +27,6 @@ h1 {
   position: absolute;
   width: 50%;
   height: 100%;
-  overflow: hidden;
 }
 
 .split.left {
@@ -158,3 +157,4 @@ h1 {
     order: 0;
     margin-left: 2em;
   }
+}
