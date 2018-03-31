@@ -1,0 +1,45 @@
+{
+	"type": "Collection",
+	"properties": {
+		"username": {
+			"name": "username",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "username",
+			"order": 0
+		},
+		"comment": {
+			"name": "comment",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "comment",
+			"order": 1
+		},
+		"vote": {
+			"name": "vote",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "vote",
+			"order": 2
+		},
+		"postDate": {
+			"name": "postDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "postDate",
+			"order": 3
+		},
+		"bandName": {
+			"name": "bandName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "bandName",
+			"order": 4
+		}
+	}
+}
